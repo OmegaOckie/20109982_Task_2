@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Dynamic;
 using System.Linq;
 using System.Text;
@@ -27,6 +28,15 @@ namespace _20109982_Task_1
         protected int mapHeight;
         protected Random rng = new Random();
         protected Item[] mapItems;
+        public Item[] mapItemsArr
+            {
+        get{
+            return mapItems;
+            }
+            set{
+            mapItems = value;
+            }
+            }
 
         public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies, int amountOfGoldDrops)
         {
@@ -71,6 +81,7 @@ namespace _20109982_Task_1
 
         private Tile Create(Tile.TileType type)
         {
+            int counter = 0;
             Tile tempTile = null;
             int randomX = rng.Next(1, mapWidth);
             int randomY = rng.Next(1, mapHeight);
@@ -94,7 +105,8 @@ namespace _20109982_Task_1
                     if (enemyType <= 1)
 	{
                         tempTile = new Mage(randomX, randomY);
-	}   else
+	}  
+                    else
 	{
              tempTile = new Goblin(randomX,randomY);
 	}

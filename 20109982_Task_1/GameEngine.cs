@@ -48,5 +48,20 @@ namespace _20109982_Task_1
 
 	}
         }
+        public void Save()
+        {
+            FileStream outputFile = new FileStream("gameMap.binary", FileMode.Create, FileAccess.Write);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            binaryFormatter.Serialize(outputFile, Map);
+            outputFile.Close();
+
+        }
+        public void Load()
+        {
+            FileStream inputFile = new FileStream("gameMap.binary", FileMode.Open, FileAccess.Read);
+            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            Map fromFile= (Map)binaryFormatter.Deserialize(inputFile);
+            inputFile.Close();
+        }
     }
 }
