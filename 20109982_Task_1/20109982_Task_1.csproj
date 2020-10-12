@@ -46,6 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mage.cs" />
+    <Compile Include="Gold.cs" />
+    <Compile Include="Item.cs" />
     <Compile Include="GameEngine.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Hero.cs" />
