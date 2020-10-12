@@ -70,7 +70,7 @@ namespace _20109982_Task_1
         {
             public EmptyTile(int xInput, int yInput) : base()
             {
-                Console.WriteLine("X");
+                Console.WriteLine(".");
             }
         }
     }

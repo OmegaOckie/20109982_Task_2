@@ -12,12 +12,13 @@ namespace _20109982_Task_1
     /// </summary>
     class GameEngine
     {
+
         public GameEngine(Map map)
         {
-            this.map = map;
+            Map map = new Map();
         }
 
-        protected Map Map;
+        private Map Map;
 
         public Map map
         {

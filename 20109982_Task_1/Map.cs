@@ -19,8 +19,9 @@ namespace _20109982_Task_1
         protected int mapWidth;
         protected int mapHeight;
         protected Random rng = new Random();
+        protected Item[] mapItems;
 
-        public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies)
+        public Map(int minimumWidth, int maximumWidth, int minimumHeight, int maximumHeight, int numberOfEnemies, int amountOfGoldDrops)
         {
 
             //Randomised the dimensions of the map.
@@ -37,6 +38,8 @@ namespace _20109982_Task_1
                 myEnemies[i] = (Enemy)Create(Tile.TileType.ENEMY);
             }
             UpdateVision();
+
+            mapItems[amountOfGoldDrops] = new Item[];
         }
 
         public void UpdateVision()
@@ -80,9 +83,18 @@ namespace _20109982_Task_1
                     tempTile = new Hero(randomX, randomY, heroHP, heroSymbol);
                     break;
                 case Tile.TileType.ENEMY:
-                    tempTile = new Goblin(randomX,randomY);
+                    int enemyType = rng.Next(3);
+                    if (enemyType <= 1)
+	{
+                        tempTile = new Mage(randomX, randomY);
+	}   else
+	{
+             tempTile = new Goblin(randomX,randomY);
+	}
+                    
                     break;
                 case Tile.TileType.GOLD:
+                    Gold(randomX, randomY);
                     break;
                 case Tile.TileType.WEAPON:
                     break;
@@ -91,6 +103,8 @@ namespace _20109982_Task_1
             }
             mapArray[randomX, randomY] = tempTile;
             return tempTile;
+
+
         }
     }
 }
