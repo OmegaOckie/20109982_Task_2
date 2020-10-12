@@ -11,9 +11,10 @@ namespace _20109982_Task_1
     /// </summary>
     class Hero : Character
     {
-
+        Character myCharacter = new Character();
         public Hero(int xInput,int yInput, int HP,char symbol) : base(xInput, yInput, 'H')
         {
+
             this.HP = HP;
             maxHP = HP;
             damage = 2;
@@ -26,9 +27,11 @@ namespace _20109982_Task_1
 
         public override string ToString()
         {
+
             return "Player Stats:\n"
                 + "HP: " + maxHP
                 + "Damage: " + 2
+                + "Gold Collected: " + myCharacter.characterGold + 
                 + "[" + X + ", " + Y + "]";
         }
     }

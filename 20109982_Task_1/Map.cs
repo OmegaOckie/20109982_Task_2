@@ -16,6 +16,13 @@ namespace _20109982_Task_1
         protected Tile[,] mapArray;
         protected Hero myHero;
         protected Enemy[] myEnemies;
+        public Enemy[] myEnemiesArr
+        {
+            get 
+            {
+                return myEnemies;
+            }
+        }
         protected int mapWidth;
         protected int mapHeight;
         protected Random rng = new Random();
@@ -104,6 +111,10 @@ namespace _20109982_Task_1
             mapArray[randomX, randomY] = tempTile;
             return tempTile;
 
+
+        }
+
+        public Item GetItemAtPosition(int x, int y){
 
         }
     }

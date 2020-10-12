@@ -19,6 +19,7 @@ namespace _20109982_Task_1
         protected int maxHP { get; set; } 
         protected int damage { get; set; }
         protected Tile[,] characterVisionArray;
+        public int characterGold;
 
         //The start of Q.2.3
         public Character(int xInput,int yInput, char symbol) : base()
@@ -123,6 +124,17 @@ namespace _20109982_Task_1
         /// <param name="move"></param>
         /// <returns></returns>
         public abstract Movement ReturnMove(Movement move = 0);
+
+        public void Pickup(Item i){
+            switch (i)
+	{
+                case TileType.GOLD:
+                    characterGold += Gold();
+                    break;
+		default:
+ break;
+	}
+        }
 
         public abstract override string ToString();
     }

@@ -40,5 +40,13 @@ namespace _20109982_Task_1
         {
             return null;
         }
+
+        public void EnemyAttacks() 
+        {
+            foreach (var item in Map.myEnemiesArr)
+	{
+
+	}
+        }
     }
 }
